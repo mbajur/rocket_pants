@@ -76,6 +76,7 @@ module RocketPants
       super.tap do |ctx|
         extras            = (ctx[:metadata] ||= {})
         extras[:messages] = errors.to_hash if errors
+        extras[:full_error_messages] = errors.full_messages if errors
       end
     end
 
